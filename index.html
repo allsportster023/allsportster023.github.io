@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Flats – Student Rentals</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+<!-- Header -->
+<header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-blue-600">Campus Flats</h1>
+        <nav class="hidden md:flex space-x-4">
+            <a href="#units" class="text-gray-600 hover:text-blue-500">Units</a>
+            <a href="#gallery" class="text-gray-600 hover:text-blue-500">Gallery</a>
+            <a href="#amenities" class="text-gray-600 hover:text-blue-500">Amenities</a>
+            <a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-blue-100 py-12 text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Affordable, Walkable Student Housing</h2>
+        <p class="text-lg text-gray-700">4 spacious units just minutes from campus. Fully furnished. Utilities included.</p>
+    </div>
+</section>
+
+<!-- Units Overview -->
+<section id="units" class="py-10 container mx-auto px-4">
+    <h3 class="text-2xl font-bold text-center mb-6">Available Units</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+        <!-- Unit Card -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Unit A</h4>
+            <p class="mb-2">2 Bed / 1 Bath – $1,200/mo</p>
+            <ul class="text-sm text-gray-600 list-disc pl-4">
+                <li>Furnished</li>
+                <li>Fast Wi-Fi</li>
+                <li>Free Parking</li>
+            </ul>
+        </div>
+        <!-- Repeat for other units -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Unit B</h4>
+            <p class="mb-2">1 Bed / 1 Bath – $950/mo</p>
+            <ul class="text-sm text-gray-600 list-disc pl-4">
+                <li>Pet Friendly</li>
+                <li>In-unit Laundry</li>
+                <li>Water & Trash Included</li>
+            </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Unit C</h4>
+            <p class="mb-2">Studio – $850/mo</p>
+            <ul class="text-sm text-gray-600 list-disc pl-4">
+                <li>All Bills Paid</li>
+                <li>Private Entrance</li>
+                <li>Smart TV Included</li>
+            </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Unit D</h4>
+            <p class="mb-2">2 Bed / 2 Bath – $1,400/mo</p>
+            <ul class="text-sm text-gray-600 list-disc pl-4">
+                <li>Large Balcony</li>
+                <li>Hardwood Floors</li>
+                <li>Fully Equipped Kitchen</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="py-10 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h3 class="text-2xl font-bold text-center mb-6">Gallery</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Replace with your images -->
+            <img src="https://via.placeholder.com/400x300" class="rounded shadow" alt="Apartment photo" />
+            <img src="https://via.placeholder.com/400x300" class="rounded shadow" alt="Living room" />
+            <img src="https://via.placeholder.com/400x300" class="rounded shadow" alt="Kitchen" />
+            <img src="https://via.placeholder.com/400x300" class="rounded shadow" alt="Bedroom" />
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Amenities -->
+<section id="amenities" class="py-10 container mx-auto px-4">
+    <h3 class="text-2xl font-bold text-center mb-6">Why Choose Campus Flats?</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Walk to Campus</h4>
+            <p class="text-gray-600">Located just 5 minutes from the main quad—no car needed!</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Fully Furnished</h4>
+            <p class="text-gray-600">Each unit comes with beds, desks, couches, and more.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-2">Student-Friendly Leasing</h4>
+            <p class="text-gray-600">Flexible 9–12 month leases with roommate matching available.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-blue-50 py-10">
+    <div class="container mx-auto px-4">
+        <h3 class="text-2xl font-bold text-center mb-6">Schedule a Tour or Apply</h3>
+        <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow space-y-4">
+            <input type="text" placeholder="Full Name" class="w-full border border-gray-300 p-2 rounded" required>
+            <input type="email" placeholder="Email Address" class="w-full border border-gray-300 p-2 rounded" required>
+            <textarea placeholder="Your Message" class="w-full border border-gray-300 p-2 rounded h-32" required></textarea>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white text-center py-4 mt-10 text-sm text-gray-600">
+    &copy; 2025 Campus Flats. All rights reserved.
+</footer>
+</body>
+</html>
