@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Campus Flats – Student Rentals</title>
+    <title>Off Campus Rentals</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,27 +19,67 @@
             }
         }
     </script>
+    <style>
+        .perspective {
+            perspective: 1000px;
+        }
+        .transform-style-preserve-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        .group:hover .group-hover\:rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 <body class="bg-light text-dark font-sans">
 
 <!-- Header -->
 <header class="bg-white shadow-md sticky top-0 z-50 backdrop-blur bg-opacity-80">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-extrabold text-primary">🏡 Campus Flats</h1>
+        <h1 class="text-2xl font-extrabold text-primary">🏡 Off Campus Rentals </h1>
         <nav class="hidden md:flex space-x-6 text-sm font-medium">
             <a href="#units" class="text-dark hover:text-primary transition">Units</a>
-            <a href="#gallery" class="text-dark hover:text-primary transition">Gallery</a>
             <a href="#amenities" class="text-dark hover:text-primary transition">Amenities</a>
+            <a href="#gallery" class="text-dark hover:text-primary transition">Gallery</a>
             <a href="#contact" class="text-dark hover:text-primary transition">Contact</a>
         </nav>
     </div>
 </header>
 
 <!-- Hero -->
-<section class="relative bg-gradient-to-br from-blue-100 to-blue-300 min-h-[60vh] flex items-center justify-center px-4">
+<section class="relative bg-gradient-to-br from-blue-100 to-blue-300 min-h-[40vh] flex items-center justify-center px-4">
     <div class="max-w-3xl text-center bg-white/30 p-8 rounded-xl backdrop-blur-lg shadow-lg">
-        <h2 class="text-4xl font-bold mb-4 text-dark">Modern Rentals for College Life</h2>
-        <p class="text-lg text-dark/80">Live comfortably, stay close to campus, and focus on what matters most.</p>
+        <h2 class="text-4xl font-bold mb-4 text-dark">Modern Rentals for Community Living</h2>
+        <p class="text-lg text-dark/80">Live comfortably, stay close to campus or downtown, and focus on what matters most.</p>
+    </div>
+</section>
+
+<!-- Amenities -->
+<section id="amenities" class="py-14 bg-gradient-to-r from-blue-50 to-indigo-100 px-4">
+    <h3 class="text-3xl font-bold text-center mb-10">Why Renters Love Us</h3>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto text-center">
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-lg font-semibold text-primary mb-2">🚶 Walk to Campus</h4>
+            <p class="text-sm text-gray-600">Just 5 minutes from campus and downtown Plymouth — no car needed!</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-lg font-semibold text-primary mb-2">🛋 Utilities Included</h4>
+            <p class="text-sm text-gray-600">No need to manage multiple bills. Rent covers electricity, water, internet, and more — so you can focus on life, not splitting utilities.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-lg font-semibold text-primary mb-2">📱 Tech-Enabled Rental Experience</h4>
+            <p class="text-sm text-gray-600">Apply, sign your lease, pay rent, and request maintenance—all from your phone. Our 100% digital platform makes campus living fast, simple, and paper-free.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-lg font-semibold text-primary mb-2">📅 Flexible Leases</h4>
+            <p class="text-sm text-gray-600">9 or 12 month leases. Rent by the room or the unit.</p>
+        </div>
     </div>
 </section>
 
@@ -48,42 +88,104 @@
     <h3 class="text-3xl font-bold text-center mb-10">Available Units</h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Unit -->
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-            <h4 class="text-xl font-semibold mb-2 text-accent">Unit A</h4>
-            <p class="mb-3 text-sm text-gray-500">2 Bed / 1 Bath – <strong>$1,200/mo</strong></p>
-            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                <li>Furnished</li>
-                <li>Fast Wi-Fi</li>
-                <li>Free Parking</li>
-            </ul>
+
+        <div class="group perspective">
+            <div class="relative h-72 w-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+                <!-- Front -->
+                <div class="absolute inset-0 bg-white p-6 rounded-2xl shadow-md backface-hidden">
+                    <h4 class="text-xl font-semibold mb-2 text-accent">Unit A</h4>
+                    <p class="mb-3 text-sm text-gray-500">4 Bed / 2 Bath – <strong>$835/mo/room</strong></p>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                        <li>Furnished</li>
+                        <li>Fast Wi-Fi</li>
+                        <li>Free Parking</li>
+                    </ul>
+                </div>
+                <!-- Back -->
+                <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
+                    <div class="grid grid-cols-2 gap-2 h-full">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 1">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 2">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 3">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 4">
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Repeat -->
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-            <h4 class="text-xl font-semibold mb-2 text-accent">Unit B</h4>
-            <p class="mb-3 text-sm text-gray-500">1 Bed / 1 Bath – <strong>$950/mo</strong></p>
-            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                <li>Pet Friendly</li>
-                <li>In-unit Laundry</li>
-                <li>Utilities Included</li>
-            </ul>
+
+
+        <div class="group perspective">
+            <div class="relative h-72 w-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+                <!-- Front -->
+                <div class="absolute inset-0 bg-white p-6 rounded-2xl shadow-md backface-hidden">
+                    <h4 class="text-xl font-semibold mb-2 text-accent">Unit B</h4>
+                    <p class="mb-3 text-sm text-gray-500">4 Bed / 2 Bath – <strong>$835/mo/room</strong></p>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                        <li>Furnished</li>
+                        <li>Fast Wi-Fi</li>
+                        <li>Free Parking</li>
+                    </ul>
+                </div>
+                <!-- Back -->
+                <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
+                    <div class="grid grid-cols-2 gap-2 h-full">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 1">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 2">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 3">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 4">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-            <h4 class="text-xl font-semibold mb-2 text-accent">Unit C</h4>
-            <p class="mb-3 text-sm text-gray-500">Studio – <strong>$850/mo</strong></p>
-            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                <li>All Bills Paid</li>
-                <li>Private Entrance</li>
-                <li>Smart TV</li>
-            </ul>
+
+
+        <div class="group perspective">
+            <div class="relative h-72 w-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+                <!-- Front -->
+                <div class="absolute inset-0 bg-white p-6 rounded-2xl shadow-md backface-hidden">
+                    <h4 class="text-xl font-semibold mb-2 text-accent">Unit C</h4>
+                    <p class="mb-3 text-sm text-gray-500">4 Bed / 1 Bath – <strong>$835/mo/room</strong></p>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                        <li>Furnished</li>
+                        <li>Fast Wi-Fi</li>
+                        <li>Free Parking</li>
+                    </ul>
+                </div>
+                <!-- Back -->
+                <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
+                    <div class="grid grid-cols-2 gap-2 h-full">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 1">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 2">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 3">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 4">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-            <h4 class="text-xl font-semibold mb-2 text-accent">Unit D</h4>
-            <p class="mb-3 text-sm text-gray-500">2 Bed / 2 Bath – <strong>$1,400/mo</strong></p>
-            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                <li>Balcony</li>
-                <li>Hardwood Floors</li>
-                <li>Modern Kitchen</li>
-            </ul>
+
+
+        <div class="group perspective">
+            <div class="relative h-72 w-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+                <!-- Front -->
+                <div class="absolute inset-0 bg-white p-6 rounded-2xl shadow-md backface-hidden">
+                    <h4 class="text-xl font-semibold mb-2 text-accent">Unit D</h4>
+                    <p class="mb-3 text-sm text-gray-500">3 Bed / 1 Bath – <strong>$835/mo/room</strong></p>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                        <li>Furnished</li>
+                        <li>Fast Wi-Fi</li>
+                        <li>Free Parking</li>
+                    </ul>
+                </div>
+                <!-- Back -->
+                <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
+                    <div class="grid grid-cols-2 gap-2 h-full">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 1">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 2">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 3">
+                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 4">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -100,28 +202,19 @@
     </div>
 </section>
 
-<!-- Amenities -->
-<section id="amenities" class="py-14 bg-gradient-to-r from-blue-50 to-indigo-100 px-4">
-    <h3 class="text-3xl font-bold text-center mb-10">Why Students Love Us</h3>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto text-center">
-        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="text-lg font-semibold text-primary mb-2">🚶 Walk to Campus</h4>
-            <p class="text-sm text-gray-600">Just 5 minutes from the main quad—no car needed!</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="text-lg font-semibold text-primary mb-2">🛋 Fully Furnished</h4>
-            <p class="text-sm text-gray-600">Beds, desks, sofas, TVs – move in ready.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="text-lg font-semibold text-primary mb-2">📅 Flexible Leases</h4>
-            <p class="text-sm text-gray-600">9 or 12 month leases. Roommate matching available.</p>
-        </div>
-    </div>
-</section>
-
 <!-- Contact -->
 <section id="contact" class="py-14 px-4 bg-white">
     <h3 class="text-3xl font-bold text-center mb-10">Get in Touch</h3>
+
+    <!-- Contact Info -->
+    <section class="bg-white py-1 px-4 text-center">
+        <p class="text-lg text-gray-700 mb-6">Reach out anytime — we are here to help!</p>
+        <div class="text-lg text-primary space-y-2">
+            <p><strong>Email:</strong> <a href="mailto:perigeerealestate@gmail.com" class="underline hover:text-blue-700">perigeerealestate@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6035202799" class="underline hover:text-blue-700">(603) 520-2799</a></p>
+        </div>
+    </section>
+
     <form class="max-w-xl mx-auto bg-gray-50 p-8 rounded-2xl shadow space-y-6">
         <div class="relative">
             <input type="text" name="name" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
@@ -141,7 +234,7 @@
 
 <!-- Footer -->
 <footer class="bg-light text-center py-6 text-sm text-gray-500 mt-10">
-    &copy; 2025 Campus Flats. All rights reserved.
+    &copy; 2025 Perigee Real Estate, LLC. All rights reserved.
 </footer>
 </body>
 </html>
