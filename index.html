@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- SEO Meta Tags -->
+    <title>Off Campus Rentals – Student Rentals in Plymouth, NH</title>
+    <meta name="description"
+          content="Modern, all-inclusive student apartments in Plymouth, NH. Steps from Plymouth State University. Spacious units, fully furnished, utilities included. Schedule a tour today!">
+    <meta name="keywords"
+          content="Plymouth NH student housing, campus apartments, student rentals, furnished units, utilities included, Plymouth State University off-campus housing, downtown walking distance">
+    <meta name="author" content="Off Campus Rentals"/>
+
+    <!-- Open Graph (for social media) -->
+    <meta property="og:title" content="Off Campus Rentals – Student Rentals in Plymouth, NH"/>
+    <meta property="og:description"
+          content="Spacious, all-inclusive student apartments near Plymouth State University."/>
+    <meta property="og:image" content="https://www.offcampusrentalsplymouthnh.com/images/preview.jpg"/>
+    <meta property="og:url" content="https://www.offcampusrentalsplymouthnh.com/"/>
+    <meta property="og:type" content="website"/>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <title>Off Campus Rentals</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,6 +37,19 @@
                 }
             }
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.gallery-img').forEach(img => {
+                img.addEventListener('click', function () {
+                    const modal = document.getElementById('imgModal');
+                    const modalImg = document.getElementById('modalImage');
+                    modal.classList.add('active');
+                    modalImg.src = this.src;
+                });
+            });
+            document.getElementById('modalClose').addEventListener('click', function () {
+                document.getElementById('imgModal').classList.remove('active');
+            });
+        });
     </script>
     <style>
         .perspective {
@@ -35,6 +67,17 @@
         .group:hover .group-hover\:rotate-y-180 {
             transform: rotateY(180deg);
         }
+        .modal {
+            display: none;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* optional spacing between the logo and title */
+        }
     </style>
 </head>
 <body class="bg-light text-dark font-sans">
@@ -42,7 +85,10 @@
 <!-- Header -->
 <header class="bg-white shadow-md sticky top-0 z-50 backdrop-blur bg-opacity-80">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-extrabold text-primary">🏡 Off Campus Rentals </h1>
+        <div class="header-container">
+            <img src="./images/Perigee_Logo.png" alt="ICR Logo" width="80" />
+            <h1 class="text-2xl font-extrabold text-primary" style="color: rgb(111,111,111)">Off Campus Rentals</h1>
+        </div>
         <nav class="hidden md:flex space-x-6 text-sm font-medium">
             <a href="#units" class="text-dark hover:text-primary transition">Units</a>
             <a href="#amenities" class="text-dark hover:text-primary transition">Amenities</a>
@@ -53,10 +99,13 @@
 </header>
 
 <!-- Hero -->
-<section class="relative bg-gradient-to-br from-blue-100 to-blue-300 min-h-[40vh] flex items-center justify-center px-4">
-    <div class="max-w-3xl text-center bg-white/30 p-8 rounded-xl backdrop-blur-lg shadow-lg">
+<section class="relative min-h-[40vh] flex items-center justify-center px-4">
+    <img src="./images/190mainst-hero-hd.jpg" alt="Modern apartment complex"
+         class="absolute inset-0 w-full h-full object-cover opacity-95">
+    <div class="max-w-3xl text-center bg-white/30 p-8 rounded-xl backdrop-blur-lg shadow-lg relative z-10">
         <h2 class="text-4xl font-bold mb-4 text-dark">Modern Rentals for Community Living</h2>
-        <p class="text-lg text-dark/80">Live comfortably, stay close to campus or downtown, and focus on what matters most.</p>
+        <p class="text-lg text-dark/80">Live comfortably, stay close to campus or downtown, and focus on what matters
+            most.</p>
     </div>
 </section>
 
@@ -70,11 +119,13 @@
         </div>
         <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
             <h4 class="text-lg font-semibold text-primary mb-2">🛋 Utilities Included</h4>
-            <p class="text-sm text-gray-600">No need to manage multiple bills. Rent covers electricity, water, internet, and more — so you can focus on life, not splitting utilities.</p>
+            <p class="text-sm text-gray-600">No need to manage multiple bills. Rent covers electricity, water, internet,
+                and more — so you can focus on life, not splitting utilities.</p>
         </div>
         <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
             <h4 class="text-lg font-semibold text-primary mb-2">📱 Tech-Enabled Rental Experience</h4>
-            <p class="text-sm text-gray-600">Apply, sign your lease, pay rent, and request maintenance—all from your phone. Our 100% digital platform makes campus living fast, simple, and paper-free.</p>
+            <p class="text-sm text-gray-600">Apply, sign your lease, pay rent, and request maintenance—all from your
+                phone. Our 100% digital platform makes campus living fast, simple, and paper-free.</p>
         </div>
         <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
             <h4 class="text-lg font-semibold text-primary mb-2">📅 Flexible Leases</h4>
@@ -94,20 +145,20 @@
                 <!-- Front -->
                 <div class="absolute inset-0 bg-white p-6 rounded-2xl shadow-md backface-hidden">
                     <h4 class="text-xl font-semibold mb-2 text-accent">Unit A</h4>
-                    <p class="mb-3 text-sm text-gray-500">4 Bed / 2 Bath – <strong>$835/mo/room</strong></p>
+                    <p class="mb-3 text-sm text-gray-500">4 Bed / 3 Bath – <strong>$835/mo/room</strong></p>
                     <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li>Furnished</li>
-                        <li>Fast Wi-Fi</li>
+                        <li>Spacious & Bright</li>
                         <li>Free Parking</li>
+                        <li>Fast Wi-Fi</li>
                     </ul>
                 </div>
                 <!-- Back -->
                 <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
                     <div class="grid grid-cols-2 gap-2 h-full">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 1">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 2">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 3">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 4">
+                        <img src="./images/AptA-kitchen.jpg" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 1">
+                        <img src="./images/AptA-bathroom1.jpg" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 2">
+                        <img src="./images/AptA-bedroom2.jpg" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 3">
+                        <img src="./images/AptA-family_old.jpg" class="rounded-md object-cover w-full h-full" alt="Unit A Photo 4">
                     </div>
                 </div>
             </div>
@@ -121,18 +172,22 @@
                     <h4 class="text-xl font-semibold mb-2 text-accent">Unit B</h4>
                     <p class="mb-3 text-sm text-gray-500">4 Bed / 2 Bath – <strong>$835/mo/room</strong></p>
                     <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li>Furnished</li>
+                        <li>Vaulted Ceilings</li>
                         <li>Fast Wi-Fi</li>
-                        <li>Free Parking</li>
+                        <li>Newly Remodeled</li>
                     </ul>
                 </div>
                 <!-- Back -->
                 <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
                     <div class="grid grid-cols-2 gap-2 h-full">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 1">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 2">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 3">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit B Photo 4">
+                        <img src="./images/aptB_kitchen.jpg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit B Photo 1">
+                        <img src="./images/aptB_livingroom.jpg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit B Photo 2">
+                        <img src="./images/aptB_stairs.jpg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit B Photo 3">
+                        <img src="./images/aptB_bathroom.jpg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit B Photo 4">
                     </div>
                 </div>
             </div>
@@ -146,7 +201,7 @@
                     <h4 class="text-xl font-semibold mb-2 text-accent">Unit C</h4>
                     <p class="mb-3 text-sm text-gray-500">4 Bed / 1 Bath – <strong>$835/mo/room</strong></p>
                     <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li>Furnished</li>
+                        <li>Vaulted Ceilings</li>
                         <li>Fast Wi-Fi</li>
                         <li>Free Parking</li>
                     </ul>
@@ -154,10 +209,14 @@
                 <!-- Back -->
                 <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
                     <div class="grid grid-cols-2 gap-2 h-full">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 1">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 2">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 3">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit C Photo 4">
+                        <img src="./images/aptC_kitchen.jpeg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit C Photo 1">
+                        <img src="./images/aptC_common.jpeg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit C Photo 2">
+                        <img src="./images/aptC_bedroom.jpeg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit C Photo 3">
+                        <img src="./images/aptC_stairs.jpeg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit C Photo 4">
                     </div>
                 </div>
             </div>
@@ -171,18 +230,22 @@
                     <h4 class="text-xl font-semibold mb-2 text-accent">Unit D</h4>
                     <p class="mb-3 text-sm text-gray-500">3 Bed / 1 Bath – <strong>$835/mo/room</strong></p>
                     <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li>Furnished</li>
+                        <li>Radiant Heat</li>
                         <li>Fast Wi-Fi</li>
-                        <li>Free Parking</li>
+                        <li>Newly Remodeled</li>
                     </ul>
                 </div>
                 <!-- Back -->
                 <div class="absolute inset-0 rounded-2xl shadow-md bg-gray-100 p-4 backface-hidden rotate-y-180 overflow-hidden">
                     <div class="grid grid-cols-2 gap-2 h-full">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 1">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 2">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 3">
-                        <img src="https://via.placeholder.com/150" class="rounded-md object-cover w-full h-full" alt="Unit D Photo 4">
+                        <img src="./images/aptD_kitchen.jpg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit D Photo 1">
+                        <img src="./images/aptD_bathroom.jpeg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit D Photo 2">
+                        <img src="./images/aptD_bedroom.jpeg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit D Photo 3">
+                        <img src="./images/aptD_window.jpg" class="rounded-md object-cover w-full h-full"
+                             alt="Unit D Photo 4">
                     </div>
                 </div>
             </div>
@@ -193,13 +256,16 @@
 <!-- Gallery -->
 <section id="gallery" class="py-14 bg-white px-4">
     <h3 class="text-3xl font-bold text-center mb-10">Gallery</h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-        <!-- Replace src with your images -->
-        <img src="https://via.placeholder.com/400x300" class="rounded-lg shadow hover:scale-105 transition" alt="Gallery image" />
-        <img src="https://via.placeholder.com/400x300" class="rounded-lg shadow hover:scale-105 transition" alt="Gallery image" />
-        <img src="https://via.placeholder.com/400x300" class="rounded-lg shadow hover:scale-105 transition" alt="Gallery image" />
-        <img src="https://via.placeholder.com/400x300" class="rounded-lg shadow hover:scale-105 transition" alt="Gallery image" />
-    </div>
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="./images/190mainst_front_square.jpg" alt="Living Room"
+             class="rounded-md object-cover w-full h-auto gallery-img cursor-zoom-in"/>
+        <img src="./images/plymouth_aerial.jpg" alt="Kitchen"
+             class="rounded-md object-cover w-full h-auto gallery-img cursor-zoom-in"/>
+        <img src="./images/190mainst_southside.jpg" alt="Kitchen"
+             class="rounded-md object-cover w-full h-auto gallery-img cursor-zoom-in"/>
+        <!--        <img src="https://via.placeholder.com/600x400" alt="Bedroom" class="rounded-md object-cover w-full h-auto gallery-img cursor-zoom-in" />-->
+        <!--        <img src="https://via.placeholder.com/600x400" alt="Bathroom" class="rounded-md object-cover w-full h-auto gallery-img cursor-zoom-in" />-->
+    </main>
 </section>
 
 <!-- Contact -->
@@ -210,31 +276,40 @@
     <section class="bg-white py-1 px-4 text-center">
         <p class="text-lg text-gray-700 mb-6">Reach out anytime — we are here to help!</p>
         <div class="text-lg text-primary space-y-2">
-            <p><strong>Email:</strong> <a href="mailto:perigeerealestate@gmail.com" class="underline hover:text-blue-700">perigeerealestate@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:6035202799" class="underline hover:text-blue-700">(603) 520-2799</a></p>
+            <p><strong>Email:</strong> <a href="mailto:perigeerealestate@gmail.com"
+                                          class="underline hover:text-blue-700">perigeerealestate@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6035202799" class="underline hover:text-blue-700">(603) 520-2799</a>
+            </p>
         </div>
     </section>
 
-    <form class="max-w-xl mx-auto bg-gray-50 p-8 rounded-2xl shadow space-y-6">
-        <div class="relative">
-            <input type="text" name="name" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
-            <label class="absolute left-3 top-2 text-xs text-gray-500 peer-focus:text-primary transition-all">Full Name</label>
-        </div>
-        <div class="relative">
-            <input type="email" name="email" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
-            <label class="absolute left-3 top-2 text-xs text-gray-500 peer-focus:text-primary transition-all">Email</label>
-        </div>
-        <div class="relative">
-            <textarea name="message" rows="4" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-            <label class="absolute left-3 top-2 text-xs text-gray-500 peer-focus:text-primary transition-all">Message</label>
-        </div>
-        <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
-    </form>
+    <!--    <form class="max-w-xl mx-auto bg-gray-50 p-8 rounded-2xl shadow space-y-6">-->
+    <!--        <div class="relative">-->
+    <!--            <input type="text" name="name" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" />-->
+    <!--            <label class="absolute left-3 top-2 text-xs text-gray-500 peer-focus:text-primary transition-all">Full Name</label>-->
+    <!--        </div>-->
+    <!--        <div class="relative">-->
+    <!--            <input type="email" name="email" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary" />-->
+    <!--            <label class="absolute left-3 top-2 text-xs text-gray-500 peer-focus:text-primary transition-all">Email</label>-->
+    <!--        </div>-->
+    <!--        <div class="relative">-->
+    <!--            <textarea name="message" rows="4" required class="peer w-full border border-gray-300 px-3 pt-5 pb-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"></textarea>-->
+    <!--            <label class="absolute left-3 top-2 text-xs text-gray-500 peer-focus:text-primary transition-all">Message</label>-->
+    <!--        </div>-->
+    <!--        <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>-->
+    <!--    </form>-->
 </section>
 
 <!-- Footer -->
 <footer class="bg-light text-center py-6 text-sm text-gray-500 mt-10">
     &copy; 2025 Perigee Real Estate, LLC. All rights reserved.
 </footer>
+
+<!-- Image Modal -->
+<div id="imgModal" class="modal fixed inset-0 bg-black bg-opacity-90 items-center justify-center z-50">
+    <button id="modalClose" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+    <img id="modalImage" src="" class="max-h-[90vh] max-w-[90vw] rounded-xl shadow-xl" alt="Enlarged photo"/>
+</div>
+
 </body>
 </html>
